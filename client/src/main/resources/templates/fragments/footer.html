@@ -1,16 +1,16 @@
-<footer th:fragment="footer" class="ftco-footer ftco-section img">
+<footer th:fragment="footer(email)" class="ftco-footer ftco-section img">
   <div class="overlay"></div>
   <div class="container">
     <div class="row mb-5">
       <div class="col-lg-3 col-md-6 mb-5 mb-md-5">
         <div class="ftco-footer-widget mb-4">
           <h2 class="ftco-heading-2">About Us</h2>
-          <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+          <p>If you want to see the site's administrator-only functionality, send me an email and I'll give you access. </p>
           <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
-            <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-            <li class="ftco-animate"><a href="#"><span class="icon-favorite"></span></a></li>
+            <li class="ftco-animate"><a href="https://github.com/Bugaienko" target="_blank"><span class="icon-github"></span></a></li>
+            <li class="ftco-animate"><a href="https://t.me/SergeyBug"><span class="icon-telegram"></span></a></li>
             <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-            <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+            <li class="ftco-animate"><a href="https://www.linkedin.com/in/sergii-bugaienko-a89b78237/" target="_blank"><span class="icon-linkedin"></span></a></li>
           </ul>
         </div>
       </div>
@@ -22,7 +22,7 @@
             <div class="text">
               <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about</a></h3>
               <div class="meta">
-                <div><a href="#"><span class="icon-calendar"></span> Sept 15, 2018</a></div>
+                <div><a href="#"><span class="icon-calendar"></span> Sept 15, 2023</a></div>
                 <div><a href="#"><span class="icon-person"></span> Admin</a></div>
                 <div><a href="#"><span class="icon-chat"></span> 19</a></div>
               </div>
@@ -33,7 +33,7 @@
             <div class="text">
               <h3 class="heading"><a href="#">Even the all-powerful Pointing has no control about</a></h3>
               <div class="meta">
-                <div><a href="#"><span class="icon-calendar"></span> Sept 15, 2018</a></div>
+                <div><a href="#"><span class="icon-calendar"></span> Sept 15, 2023</a></div>
                 <div><a href="#"><span class="icon-person"></span> Admin</a></div>
                 <div><a href="#"><span class="icon-chat"></span> 19</a></div>
               </div>
@@ -57,9 +57,19 @@
           <h2 class="ftco-heading-2">Have a Questions?</h2>
           <div class="block-23 mb-3">
             <ul>
-              <li><span class="icon icon-map-marker"></span><span class="text">203 Fake St. Mountain View, San Francisco, California, USA</span></li>
-              <li><a href="#"><span class="icon icon-phone"></span><span class="text">+2 392 3929 210</span></a></li>
-              <li><a href="#"><span class="icon icon-envelope"></span><span class="text">info@yourdomain.com</span></a></li>
+              <li><span class="icon icon-map-marker"></span><span class="text">Office Center Central, 203 Lange Str., Berlin, Germany</span></li>
+              <li>
+                <a th:href="${'tel: +49-151-222-333-44'}"
+                      th:inline="text">
+                <span class="icon icon-phone white"></span>
+                [['+49-151-222-333-44']]
+              </a></li>
+              <li><a th:href="${'mailto:' + email}"
+                     th:target="_blank"
+                     th:inline="text">
+                <span class="icon icon-envelope white"></span>
+                [[${email}]]
+              </a></li>
             </ul>
           </div>
         </div>

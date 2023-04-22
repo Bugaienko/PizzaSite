@@ -60,13 +60,7 @@
                                 </h3>
                                 <span th:text="${pizza.getBase().getSize() + ' ' + pizza.getBase().name}"
                                       class="position"></span>
-                                <!--                                                    <div class="text">-->
-                                <!--                                                        <p>-->
-                                <!--                                                            <span th:each="ingr,iterStat : ${pizza.getIngredients()}">-->
-                                <!--                                                                <span th:text="${!iterStat.last ? ingr.name + ', ' : ingr.name}"></span>-->
-                                <!--                                                            </span>-->
-                                <!--                                                        </p>-->
-                                <!--                                                    </div>-->
+
                             </div>
                             <div class="d-block flex-grow-1 text-center">
                                 <a th:href="@{/pizza/add_to_menu/{cafe}/{pizza}(cafe=${cafe.id}, pizza=${pizza.id})}"
@@ -98,7 +92,7 @@
 </section>
 
 
-<div th:replace="fragments/footer :: footer"></div>
+<div th:replace="fragments/footer :: footer('sergiibugaienko@gmail.com')"></div>
 <div th:replace="fragments/loader"></div>
 
 </body>

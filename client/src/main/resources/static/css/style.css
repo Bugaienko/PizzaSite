@@ -11255,7 +11255,7 @@ h1, h2, h3, h4, h5,
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     -ms-border-radius: 4px;
-    border-radius: 4px;
+    border-radius: 6px;
     -moz-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     -webkit-transition: all 0.3s ease;
@@ -11299,6 +11299,23 @@ h1, h2, h3, h4, h5,
     -moz-border-radius: 50%;
     -ms-border-radius: 50%;
     border-radius: 50%;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    -ms-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+
+.staff .img-balu {
+    width: 140px;
+    height: 140px;
+    border: 1px solid #8d5d05;
+    margin: 0 auto;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    -ms-border-radius: 15px;
+    border-radius: 15px;
     -moz-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
     -webkit-transition: all 0.3s ease;
@@ -11782,6 +11799,7 @@ textarea.form-control {
 
 .hero-wrap,
 .img,
+.img-balu,
 .blog-img,
 .user-img {
     background-size: cover;
@@ -12599,4 +12617,13 @@ p.balu-yellow{
     display: grid !important;
     align-content: space-between !important;
     justify-content: center;
+}
+
+.project-div {
+    padding: 1rem 4em;
+}
+
+.project-div p {
+    color: whitesmoke !important;
+    text-align: justify;
 }
