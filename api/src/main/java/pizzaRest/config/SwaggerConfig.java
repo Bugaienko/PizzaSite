@@ -18,6 +18,7 @@ import springfox.documentation.spi.DocumentationType;
 import springfox.documentation.spring.web.plugins.Docket;
 import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
+import static springfox.documentation.builders.PathSelectors.regex;
 
 
 /**
@@ -52,6 +53,7 @@ public class SwaggerConfig {
     public Docket customImplementation(){
         return new Docket(DocumentationType.OAS_30)
                 .select()
+                .paths(regex("/controllers/rest/.*"))
                 .apis(RequestHandlerSelectors.basePackage("pizzaRest.controllers.rest"))
                 .build()
                 .directModelSubstitute(org.threeten.bp.LocalDate.class, java.sql.Date.class)
