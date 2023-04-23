@@ -5,6 +5,8 @@ import com.auth0.jwt.JWTVerifier;
 import com.auth0.jwt.algorithms.Algorithm;
 import com.auth0.jwt.exceptions.JWTVerificationException;
 import com.auth0.jwt.interfaces.DecodedJWT;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
@@ -18,11 +20,14 @@ import java.util.Date;
 @Component
 public class JwtUtil {
 
+    private final Logger logger = LoggerFactory.getLogger(JwtUtil.class);
+
     @Value("${jwt_secret}")
     private String secret;
 
     public String generateToken(String username){
         Date experationDate = Date.from(ZonedDateTime.now().plusMinutes(60).toInstant());
+        logger.info("Generate token for {}", username);
         return JWT.create()
                 .withSubject("User details")
                 .withClaim("username", username)

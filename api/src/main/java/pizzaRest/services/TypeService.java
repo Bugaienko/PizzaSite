@@ -34,11 +34,21 @@ public class TypeService {
     }
 
     @Transactional
-    public void create(TypeIngredient type) {
-        TypeIngredient newType = new TypeIngredient(type.getName());
+    public boolean create(TypeIngredient type) {
+//        TypeIngredient newType = new TypeIngredient(type.getName());
 //        System.out.println(newType);
-        typesRepository.save(newType);
-        logger.info("Create new TypeIngredient {}", newType.getName());
+        typesRepository.save(type);
+        logger.info("Create new TypeIngredient {}", type.getName());
+        return true;
+    }
+
+    @Transactional
+    public TypeIngredient create(String name) {
+        System.out.println("Type service -> running "+ name);
+        TypeIngredient newType = new TypeIngredient(name);
+//        System.out.println(newType);
+//        logger.info("Create new TypeIngredient {}", newType.getName());
+        return typesRepository.save(newType);
     }
 
     public Optional<TypeIngredient> findByName(String name) {
@@ -51,7 +61,7 @@ public class TypeService {
 
     @Transactional
     public TypeIngredient update(TypeIngredient type) {
-        TypeIngredient typeIngredient = typesRepository.findById(type.getId()).get();
+        TypeIngredient typeIngredient = typesRepository.findById(type.getId()).orElseThrow(NotFoundException::new);
         typeIngredient.setName(type.getName());
         logger.info("Update TypeIngredient id={}", type.getId());
         return typesRepository.save(typeIngredient);

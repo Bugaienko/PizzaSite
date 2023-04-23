@@ -33,6 +33,15 @@ public class CafeDTO {
     public CafeDTO() {
     }
 
+    public CafeDTO(String title, String city, String email, String phone, String openAt, String closeAt) {
+        this.title = title;
+        this.city = city;
+        this.email = email;
+        this.phone = phone;
+        this.openAt = openAt;
+        this.closeAt = closeAt;
+    }
+
     public int getId() {
         return id;
     }

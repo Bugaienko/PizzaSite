@@ -9,6 +9,7 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
@@ -27,11 +28,10 @@ public interface CafeControllerInt {
     @Operation(summary = "Get all cafes", description = "", security = {
             @SecurityRequirement(name = "bearerAuth")}, tags = {"Cafe"})
     @ApiResponses(value = {
-            @ApiResponse(responseCode = "200", description = "Successful operation", content = @Content(mediaType = "application/json", array = @ArraySchema(schema = @Schema(implementation = CafeDTO.class)))),
+            @ApiResponse(responseCode = "200", description = "Successful operation", content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE, array = @ArraySchema(schema = @Schema(implementation = CafeDTO.class)))),
 
-            @ApiResponse(responseCode = "403", description = "Access denied", content = @Content(mediaType = "application/json", schema = @Schema(implementation = AcssessDeneidedResponse403.class)))})
-    @GetMapping(value = "/api/cafe/all",
-            produces = {"application/json"})
+            @ApiResponse(responseCode = "403", description = "Access denied", content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE, schema = @Schema(implementation = AcssessDeneidedResponse403.class)))})
+    @GetMapping(value = "/api/cafe/all", produces = {MediaType.APPLICATION_JSON_VALUE})
     ResponseEntity<List<CafeDTO>> getAllCafes();
 
 
