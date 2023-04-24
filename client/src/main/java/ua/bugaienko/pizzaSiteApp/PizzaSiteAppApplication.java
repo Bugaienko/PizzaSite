@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Bean;
 public class PizzaSiteAppApplication {
 	public static void main(String[] args) {
 
-		SpringApplication.run(PizzaSiteAppApplication.class, args);
+		SpringApplication.run(PizzaSiteAppApplication.class, "--spring.config.name=application-client");
 	}
 
 	@Bean

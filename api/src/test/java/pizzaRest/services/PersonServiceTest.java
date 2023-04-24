@@ -10,8 +10,9 @@ import pizzaRest.repositiries.PersonRepository;
 
 //@RequiredArgsConstructor(onConstructor = @__(@Autowired))
 //@ImportAutoConfiguration
-@ExtendWith(SpringExtension.class)
-@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT, classes = PersonServiceTest.class)
+//@ExtendWith(SpringExtension.class)
+//@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT, classes = PersonServiceTest.class)
+@SpringBootTest
 class PersonServiceTest {
 
     private final PersonRepository personRepository;
