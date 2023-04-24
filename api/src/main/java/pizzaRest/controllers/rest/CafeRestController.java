@@ -87,6 +87,6 @@ public class CafeRestController implements CafeControllerInt {
         ErrorResponse response = new ErrorResponse(
                 "Object with this id wasn't found", System.currentTimeMillis()
         );
-        return new ResponseEntity<>(response, HttpStatus.NOT_ACCEPTABLE);
+        return new ResponseEntity<>(response, HttpStatus.NOT_FOUND);
     }
 }
