@@ -59,6 +59,7 @@ public class PersonService {
     }
 
     public List<Person> findAll() {
+        System.out.println("PS findAll");
         return personRepository.findAll();
     }
 
@@ -98,8 +99,10 @@ public class PersonService {
     }
 
     @Transactional
-    public void save(Person person) {
+    public boolean save(Person person) {
+        System.out.println("PS save");
         personRepository.save(person);
+        return true;
     }
 
     public Person findOne(int personId) {
