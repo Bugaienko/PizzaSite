@@ -35,10 +35,9 @@ import static org.springframework.boot.test.context.SpringBootTest.WebEnvironmen
 //@ExtendWith(SpringExtension.class)
 //@ExtendWith(MockitoExtension.class)
 //@AutoConfigureMockMvc
-@RunWith(SpringRunner.class)
-//@ExtendWith(Extension.class)
-@SpringBootTest(classes = {TypeService.class, TypesRepository.class})
-//@DataJpaTest
+
+
+@SpringBootTest
 class TypeServiceTest {
 
 

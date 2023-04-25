@@ -46,6 +46,7 @@ public interface AdminControllerInterface {
             @SecurityRequirement(name = "bearerAuth")}, tags = {"Admin"})
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "OK"),
+            @ApiResponse(responseCode = "200", description = "OK"),
 
             @ApiResponse(responseCode = "403", description = "Admin only method! Access denied"),
 

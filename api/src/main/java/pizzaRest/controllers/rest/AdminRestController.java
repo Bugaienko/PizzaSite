@@ -75,6 +75,7 @@ public class AdminRestController implements AdminControllerInterface {
         return ResponseEntity.ok(convertCafeToDTO(newCafe));
     }
 
+
     @Override
     @PreAuthorize("hasRole('ADMIN')")
     @PostMapping(value = "/cafe/menu/add/{cafeId}/{pizzaId}")
