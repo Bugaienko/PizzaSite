@@ -8,6 +8,7 @@ database.properties
 hibernate.cfg.xml
 hibernate.properties
 *.properties
+.yaml
 
 *.idea
 /target
